@@ -12,4 +12,16 @@ export class UsersController {
     async VerifyEmail(@Res() res: Response, @Param("token") emailToken) {
         await this.userService.VerifyEmail(res, emailToken)
     }
+    @Post("/login")
+    async LoginUser(@Res() res:Response,@Body() creds){
+        await this.userService.LoginUser(res,creds)
+    }
+    @Get('furnitures')
+    async GetFurnitures(@Res() res:Response){
+        await this.userService.GetFurnitures(res)
+    }
+    @Post('order/:furnitureId')
+    async OrderFurniture(@Res() res:Response, @Body() customer, @Param('furnitureId') furnitureId){
+        await this.userService.OrderFurniture(res,furnitureId,customer)
+    }
 }

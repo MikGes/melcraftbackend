@@ -40,12 +40,6 @@ export const UsersSchema = new mongoose.Schema({
     ],
     orders: [
         {
-            order_id: {
-                type: String,
-                required: true
-            }
-        },
-        {
             ordered_furniture_id: {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: "furniture"

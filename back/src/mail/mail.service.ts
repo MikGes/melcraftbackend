@@ -5,6 +5,11 @@ import * as nodemailer from 'nodemailer';
 export class MailService {
     private transporter = nodemailer.createTransport({
         service: 'gmail',
+
+        tls: {
+            rejectUnauthorized: false // <-- This allows self-signed certs
+        }
+        ,
         auth: {
             user: 'melcraftinteriors@gmail.com',
             pass: process.env.MailPassword,

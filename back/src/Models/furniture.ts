@@ -22,7 +22,7 @@ export const FurnitureSchema = new mongoose.Schema({
     },
     furniture_image: {
         type: Buffer,
-        required: true,
+        required: false,
         contentType: {
             type: String,  
             required: true
